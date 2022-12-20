@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Marker</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Bárdos Iskola osztályozója</h1>
+        <div class="inputs">
+            <label for="osszpont">Összpont: </label>
+            <input type="number"  name="osszpont" id="osszpont">
+        </div>
+        <div class="inputs">
+            <label for="elert">Elért:</label>
+            <input type="number" name="elert" id="elert">
+        </div>
+        <input class="gomb" type="button" onclick="calc()" value="Értékelés">
+        <h1 id="final">0% (1)</h1>
+        <input type="button" class="gomb" id="sávok" onclick="showModal()" value="Sávok">
+        <div id="modal">
+            
+            <div id="grading">
+                <span id="close" onclick="closeModal()">X</span>
+                <div class="grades">
+                    <label for="one"> 1: </label>
+                    <p class="ponthatar">0 - </p>
+                    <input type="number"  tabindex="0" name="one" id="one" value="34">
+                </div>
+                <div class="grades">
+                    <label for="two"> 2: </label>
+                    <p class="ponthatar">34.1 - </p>
+                    <input type="number" tabindex="0" name="two" id="two" value="54">
+                </div>
+                <div class="grades">
+                    <label for="three"> 3: </label>
+                    <p class="ponthatar">54.1 - </p>
+                    <input type="number" tabindex="0" name="three" id="three" value="74">
+                </div>
+                <div class="grades">
+                    <label for="four"> 4: </label>
+                    <p class="ponthatar">74.1 - </p>
+                    <input type="number" tabindex="0"  name="four" id="four" value="89">
+                </div>
+            </div>
+        </div>
+        <p id="footer">&copy mcbulazs</p>
+        <div onclick="showInformation()" id="informationButton">
+            🛈
+        </div>
+        <div id="info">
+            <div id="inf">
+                <span id="close" onclick="closeInformation()">X</span>
+                <h5>Gyorsbillentyűk</h5>
+                <p>"Enter" - Kiszámolja a jegyet</p>
+                <p>"Space" - Megnyitja a sávokat</p>
+                <p>"Esc" - Kilép a főmenübe</p>
+                <p>"i" - Megnyitja az információs panelt</p>
+                <p>"Tab" - Sorban belép a "szövegdobozokba"</p>
+                
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
