@@ -107,14 +107,29 @@ document.addEventListener("keydown", function (event) {
 })
 
 function borderChange() {
-    document.getElementById("twoUnder").innerText = document.getElementById("one").value + ".1 - "
-    document.getElementById("threeUnder").innerText = document.getElementById("two").value + ".1 - "
-    document.getElementById("fourUnder").innerText = document.getElementById("three").value + ".1 - "
-
+    
     one=document.getElementById("one").value
     two=document.getElementById("two").value
     three=document.getElementById("three").value
     four=document.getElementById("four").value
+    if (one>100 || two >100 || three>100 || four>100) {
+        alert("A ponthatárt százalékosan kell megadni így nem lehet 100 felett")
+        if (one>100) {
+            document.getElementById("one").value=34
+        }
+        if (two>100) {
+            document.getElementById("two").value=54
+        }
+        if (three>100) {
+            document.getElementById("three").value=74
+        }
+        if (four>100) {
+            document.getElementById("four").value=89
+        }
+    }
+    document.getElementById("twoUnder").innerText = document.getElementById("one").value + ".1 - "
+    document.getElementById("threeUnder").innerText = document.getElementById("two").value + ".1 - "
+    document.getElementById("fourUnder").innerText = document.getElementById("three").value + ".1 - "
     if (ossz!="" && elert!=""  && ossz>=elert) {
         calc()
     }
