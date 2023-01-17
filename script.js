@@ -136,6 +136,7 @@ function borderChange() {
     document.getElementById("twoUnder").innerText = (document.getElementById("one").value*1+1) + " - "
     document.getElementById("threeUnder").innerText = (document.getElementById("two").value*1+1) + " - "
     document.getElementById("fourUnder").innerText = (document.getElementById("three").value*1+1) + " - "
+    document.getElementById("fiveUnder").innerText = (document.getElementById("four").value*1+1)+" -"
     if (ossz!="" && elert!=""  && ossz>=elert) {
         console.log(";\n"+elert);
         calc()

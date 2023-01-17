@@ -44,9 +44,13 @@ html,body{
     justify-content: space-evenly;
     flex-direction: column; 
     background-color: aqua;
-    height: 40%;
+    height: 50%;
     border-radius: 3vw;   
     font-size: 2vw;
+}
+#five{
+    width: 70%;
+    text-align: left;
 }
 .ponthatar{
     font-size: 1vw;
