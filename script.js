@@ -64,7 +64,9 @@ function closeInformation() {
 }
 document.addEventListener("keydown", function (event) {
     if (event.key==="Enter" && !isModalOpened) {
-        calc()
+        if (document.activeElement !== document.getElementById("osszpont")) {
+            calc()
+        }
         document.getElementById("elert").select()
     }else if (event.key === " ") {
         event.preventDefault()
