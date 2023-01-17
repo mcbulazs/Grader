@@ -15,12 +15,16 @@ html,body{
     background-color: silver;
 }
 .inputs{
+    margin-top: 1%;
+    font-size: 4vh;
     width: 30%;
     display: flex;
     justify-content: space-between;
 }
 .inputs > input{
+    font-size: 5vh;
     width: 60%;
+    height: 5vh;
 }
 #modal{
     position: absolute;
