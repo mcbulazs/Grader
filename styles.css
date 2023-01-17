@@ -53,6 +53,8 @@ html,body{
     position: absolute;
     bottom: 0;
     margin: auto;
+    color: black;
+    text-decoration: none;
 }
 .grades{
     height: 10vh;
