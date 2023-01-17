@@ -1,8 +1,15 @@
 var isModalOpened = false
+var one
+var two
+var three
+var four
+var ossz
+var elert
 function calc() {
+console.log("asd");
     document.getElementById("final").innerText = "0% (1)"
-    var ossz=document.getElementById("osszpont").value*1
-    var elert=document.getElementById("elert").value*1
+    ossz=document.getElementById("osszpont").value*1
+    elert=document.getElementById("elert").value*1
     console.log(ossz+" "+elert);
     if (ossz=="") {
         alert("Az összpont mező üres")
@@ -53,40 +60,62 @@ function closeInformation() {
     document.getElementById("info").style.visibility = "hidden"
 }
 document.addEventListener("keydown", function (event) {
-    if (event.key==="Enter") {
+    if (event.key==="Enter" && !isModalOpened) {
         calc()
+        document.getElementById("elert").select()
     }else if (event.key === " ") {
         showModal()
     }else if (event.key === "Escape"){
         closeModal()
         closeInformation()
-    }else if (event.key === "Tab"){
+    }else if (event.key === "Tab" || (isModalOpened && event.key==="Enter")){
         event.preventDefault()
         if (isModalOpened) {
             if (document.activeElement === document.getElementById("one")) {
                 document.getElementById("two").focus()
+                document.getElementById("two").select()
             }
             else if (document.activeElement === document.getElementById("two")) {
                 document.getElementById("three").focus()
+                document.getElementById("three").select()
             }
             else if (document.activeElement === document.getElementById("three")) {
                 document.getElementById("four").focus()
+                document.getElementById("four").select()
             }
             else if (document.activeElement === document.getElementById("four")) {
                 document.getElementById("one").focus()
+                document.getElementById("one").select()
             }
             else{
                 document.getElementById("one").focus()
+                document.getElementById("one").select()
             }
         }else{
 
             if (document.activeElement !== document.getElementById("osszpont")) {
                 document.getElementById("osszpont").focus()
+                document.getElementById("osszpont").select()
             }else{
                 document.getElementById("elert").focus()
+                document.getElementById("elert").select()
             }
         }
     }else if(event.key === "i"){
         showInformation()
     }
 })
+
+function borderChange() {
+    document.getElementById("twoUnder").innerText = document.getElementById("one").value + ".1 - "
+    document.getElementById("threeUnder").innerText = document.getElementById("two").value + ".1 - "
+    document.getElementById("fourUnder").innerText = document.getElementById("three").value + ".1 - "
+
+    one=document.getElementById("one").value
+    two=document.getElementById("two").value
+    three=document.getElementById("three").value
+    four=document.getElementById("four").value
+    if (ossz!="" && elert!=""  && ossz>=elert) {
+        calc()
+    }
+}
