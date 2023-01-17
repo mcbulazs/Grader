@@ -6,11 +6,9 @@ var four
 var ossz
 var elert
 function calc() {
-console.log("asd");
     document.getElementById("final").innerText = "0% (1)"
     ossz=document.getElementById("osszpont").value*1
     elert=document.getElementById("elert").value*1
-    console.log(ossz+" "+elert);
     if (ossz=="") {
         alert("Az összpont mező üres")
         return
@@ -31,14 +29,19 @@ console.log("asd");
     var grade
     if (szazalek<=one) {
         grade=1
+        document.getElementById("final").style.color = "#ff0000"
     }else if (szazalek<=two){
         grade=2
+        document.getElementById("final").style.color = "#ff8000"
     }else if (szazalek<=three){
         grade=3
+        document.getElementById("final").style.color = "#ffff00"
     }else if (szazalek<=four){
         grade=4
+        document.getElementById("final").style.color = "#80ff00"
     }else{
         grade=5
+        document.getElementById("final").style.color = "green"
     }
     document.getElementById("final").innerText = szazalek+"% ("+grade+")"
 }
@@ -64,6 +67,7 @@ document.addEventListener("keydown", function (event) {
         calc()
         document.getElementById("elert").select()
     }else if (event.key === " ") {
+        event.preventDefault()
         showModal()
     }else if (event.key === "Escape"){
         closeModal()
@@ -131,6 +135,7 @@ function borderChange() {
     document.getElementById("threeUnder").innerText = document.getElementById("two").value + ".1 - "
     document.getElementById("fourUnder").innerText = document.getElementById("three").value + ".1 - "
     if (ossz!="" && elert!=""  && ossz>=elert) {
+        console.log(";\n"+elert);
         calc()
     }
 }
