@@ -146,10 +146,9 @@ function borderChange() {
 
 function maxChanged(){
     let max=document.getElementById("osszpont").value
-    document.getElementById("sideGrades1").innerHTML = `1: 0 - ${Math.round(max*document.getElementById("one").value/100)}(${document.getElementById("one").value}%)`
-    document.getElementById("sideGrades2").innerHTML = `2: ${Math.round((max*document.getElementById("one").value)/100)+1}(${document.getElementById("one").value*1+1}%) - ${Math.round(max*document.getElementById("two").value/100)}(${document.getElementById("two").value}%)`
-    document.getElementById("sideGrades3").innerHTML = `3: ${Math.round((max*document.getElementById("two").value)/100)+1}(${document.getElementById("two").value*1+1}%) - ${Math.round(max*document.getElementById("three").value/100)}(${document.getElementById("three").value}%)`
-    document.getElementById("sideGrades4").innerHTML = `4: ${Math.round((max*document.getElementById("three").value)/100)+1}(${document.getElementById("three").value*1+1}%) - ${Math.round(max*document.getElementById("four").value/100)}(${document.getElementById("four").value}%)`
-    document.getElementById("sideGrades5").innerHTML = `5: ${Math.round((max*document.getElementById("four").value)/100)+1}(${document.getElementById("four").value*1+1}%) - ${max}`
-
+    document.getElementById("sideGrades1").innerHTML = `1: 0 - ${Math.round(max*document.getElementById("one").value/100)}`
+    document.getElementById("sideGrades2").innerHTML = `2: ${Math.round((max*document.getElementById("one").value)/100)+1} - ${Math.round(max*document.getElementById("two").value/100)}`
+    document.getElementById("sideGrades3").innerHTML = `3: ${Math.round((max*document.getElementById("two").value)/100)+1} - ${Math.round(max*document.getElementById("three").value/100)}`
+    document.getElementById("sideGrades4").innerHTML = `4: ${Math.round((max*document.getElementById("three").value)/100)+1} - ${Math.round(max*document.getElementById("four").value/100)}`
+    document.getElementById("sideGrades5").innerHTML = `5: ${Math.round((max*document.getElementById("four").value)/100)+1} - ${max}`
 }

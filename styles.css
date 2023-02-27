@@ -39,6 +39,7 @@ html,body{
     visibility: hidden;
 }
 #grading{
+    z-index: 1;
     width: 30%;
     position: relative;
     display: flex;
