@@ -181,7 +181,8 @@ html,body{
     }
     #sideSavok{
         position: relative;
-        line-height: 1vh;
+        display: block;
+        line-height: 0.6vh;
         left: 0;
     }
 }
