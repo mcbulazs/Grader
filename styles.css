@@ -180,6 +180,8 @@ html,body{
         visibility: hidden;
     }
     #sideSavok{
-        visibility: hidden;
+        position: relative;
+        line-height: 1vh;
+        left: 0;
     }
 }

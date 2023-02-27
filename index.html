@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,13 @@
     <link rel="stylesheet" href="styles.css">
     <title>Marker</title>
 </head>
+
 <body>
     <div class="main">
         <h1>Bárdos Iskola osztályozója</h1>
         <div class="inputs">
             <label for="osszpont">Összpont: </label>
-            <input type="number"  name="osszpont" id="osszpont" onchange="maxChanged()">
+            <input type="number" name="osszpont" id="osszpont" onchange="maxChanged()">
         </div>
         <div class="inputs">
             <label for="elert">Elért:</label>
@@ -22,13 +24,13 @@
         <h1 id="final">0% (1)</h1>
         <input type="button" class="gomb" id="sávok" onclick="showModal()" value="Sávok">
         <div id="modal">
-            
+
             <div id="grading">
                 <span id="close" onclick="closeModal()">X</span>
                 <div class="grades">
                     <label for="one"> 1: </label>
                     <p class="ponthatar">0 - </p>
-                    <input type="number" onchange="borderChange()"  tabindex="0" name="one" id="one" value="34">
+                    <input type="number" onchange="borderChange()" tabindex="0" name="one" id="one" value="34">
                 </div>
                 <div class="grades">
                     <label for="two"> 2: </label>
@@ -43,7 +45,7 @@
                 <div class="grades">
                     <label for="four"> 4: </label>
                     <p id="fourUnder" class="ponthatar">75 - </p>
-                    <input type="number" onchange="borderChange()" tabindex="0"  name="four" id="four" value="89">
+                    <input type="number" onchange="borderChange()" tabindex="0" name="four" id="four" value="89">
                 </div>
                 <div class="grades">
                     <label for="five"> 5: </label>
@@ -51,6 +53,14 @@
                     <p id="five" class="ponthatar"> 100</p>
                 </div>
             </div>
+        </div>
+        <!--bal oldali savok-->
+        <div id="sideSavok">
+            <h3 id="sideGrades1">1: 0 - 34(34%)</h3>
+            <h3 id="sideGrades2">2: 35(35%)- 54(54%)</h3>
+            <h3 id="sideGrades3">3: 55(55%)- 74(74%)</h3>
+            <h3 id="sideGrades4">4: 75(75%)- 89(89%)</h3>
+            <h3 id="sideGrades5">5: 90(90%)- 100</h3>
         </div>
         <a id="footer" href="https://github.com/mcbulazs" target="_blank">&copy mcbulazs</a>
         <div onclick="showInformation()" id="informationButton">
@@ -65,18 +75,12 @@
                 <p>"Esc" - Kilép a főmenübe</p>
                 <p>"i" - Megnyitja az információs panelt</p>
                 <p>"Tab" - Sorban belép a "szövegdobozokba"</p>
-                
+
             </div>
         </div>
     </div>
-    <!--bal oldali savok-->
-    <div id="sideSavok">
-        <h3 id="sideGrades1">1: 0 - 34(34%)</h3>
-        <h3 id="sideGrades2">2: 35(35%)- 54(54%)</h3>
-        <h3 id="sideGrades3">3: 55(55%)- 74(74%)</h3>
-        <h3 id="sideGrades4">4: 75(75%)- 89(89%)</h3>
-        <h3 id="sideGrades5">5: 90(90%)- 100</h3>
-    </div>
+
     <script src="script.js"></script>
 </body>
+
 </html>
