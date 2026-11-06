@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f6f5f1;
+  --surface: #ffffff;
+  --surface-2: #f0eee8;
+  --border: #e2dfd6;
+  --text: #1c1b18;
+  --muted: #6b675d;
+  --accent: #2f5bd3;
+  --accent-text: #ffffff;
+  --danger: #c62828;
+
+  /* Grade colours: 1 red → 5 green */
+  --g1: #d93025;
+  --g2: #e8710a;
+  --g3: #c99400;
+  --g4: #5f9e1b;
+  --g5: #188038;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141412;
+    --surface: #1d1c1a;
+    --surface-2: #262522;
+    --border: #34322e;
+    --text: #edebe6;
+    --muted: #a19d93;
+    --accent: #7c9cff;
+    --accent-text: #0e1220;
+    --danger: #ff7b72;
+
+    --g1: #ff6b5e;
+    --g2: #ff9d4d;
+    --g3: #f2c94c;
+    --g4: #a3d65c;
+    --g5: #4fd17a;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-danger: var(--danger);
+  --color-g1: var(--g1);
+  --color-g2: var(--g2);
+  --color-g3: var(--g3);
+  --color-g4: var(--g4);
+  --color-g5: var(--g5);
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+html {
+  color-scheme: light dark;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Numbers line up in tables and big results */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-border bg-surface p-5 sm:p-6;
+  }
+  .field {
+    @apply w-full rounded-xl border border-border bg-surface px-4 py-3 text-lg text-text outline-none transition placeholder:text-muted/70 focus:border-accent focus:ring-4 focus:ring-accent/20;
+  }
+  .field-invalid {
+    @apply border-danger focus:border-danger focus:ring-danger/20;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-muted;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-medium text-text transition hover:bg-surface-2 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent/25 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply border-accent bg-accent text-accent-text hover:bg-accent hover:brightness-110;
+  }
+  .btn-danger {
+    @apply text-danger hover:bg-danger/10;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .card {
+    border: none;
+    padding: 0;
+  }
+}

@@ -1,0 +1,32 @@
+# Server setup: put this file in its own folder (e.g. /mnt/data/apps/grader)
+# and run `docker compose up -d`. The image is pulled from GHCR.
+services:
+  grader:
+    image: ghcr.io/mcbulazs/grader:latest
+    container_name: grader
+    restart: unless-stopped
+    # Static files only: nothing needs to be written except nginx temp files.
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 64m
+    pids_limit: 50
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.grader.rule=Host(`grader.varizsombor.com`)"
+      - "traefik.http.routers.grader.entrypoints=websecure"
+      - "traefik.http.services.grader.loadbalancer.server.port=8080"
+      - "dashboard.name=Osztályozó"
+
+networks:
+  traefik:
+    external: true
